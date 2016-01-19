@@ -20,6 +20,16 @@ describe('Movies CRUD Routes', function() {
     return knex.seed.run(knex.config);
   });
 
+  xit('should use knex migrations', function () {
+    return knex('knex_migrations').select().then(function (migrations) {
+      moviesMigration = migrations[0].name.split('_');
+      assert.equal(moviesMigration[1], 'create');
+      assert.equal(moviesMigration[2], 'movies.js');
+      reviewsMigration = migrations[1].name.split('_');
+      assert.equal(reviewsMigration[1], 'create');
+      assert.equal(reviewsMigration[2], 'reviews.js');
+    })
+  })
   xit('should get all movies from the Movies db', function () {
     return Movies().select().then(function (movies) {
       movies.should.have.length(3);
