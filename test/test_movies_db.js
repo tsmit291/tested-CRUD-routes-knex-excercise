@@ -55,7 +55,7 @@ describe('Movies CRUD Routes', function() {
       })
     });
   });
-  it('should delete a movie', function () {
+  xit('should delete a movie', function () {
     return Movies().where('title', 'The Great Beyond').first().del().then(function (results) {
       return Movies().select().then(function (movies) {
         movies.should.have.length(2);
