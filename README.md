@@ -15,6 +15,10 @@ nodemon
 
 ## Run Tests
 
+```sh
+mocha
+```
+
 Work through your tests in this order:
 
 1. `test_movies_routes`
@@ -23,10 +27,6 @@ Work through your tests in this order:
 1. `test_movie_reviews_db`
 
 Work through tests one at a time by removing the `x` from the next `xit` each time you pass a test. `add, commit, push` after each successfully passing test.
-
-```sh
-mocha
-```
 
 ## Objectives
 
@@ -66,6 +66,6 @@ __2. Separate Route Files__
 
 ## SUBMIT A PULL REQUEST WITH YOUR HEROKU LINK
 
-After passing all tests, deploy the app to Heroku and use migrations to create your prodction schema.
+After passing all tests, deploy the app to Heroku and use migrations to create your production schema.
 
 Add the url to your deployed site to this readme and submit a pull request.
