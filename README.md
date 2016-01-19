@@ -38,6 +38,24 @@ mocha
 * Be able to deploy a CRUD app to Heroku
 * Be able to create database schemas on Heroku using migrations
 
+## Schemas
+
+__MOVIES__
+
+```
+id
+director
+title
+```
+__REVIEWS__
+
+```
+id
+movie_id
+author
+rating
+```
+
 ## SUBMIT A PULL REQUEST WITH YOUR HEROKU LINK
 
 After passing all tests, deploy the app to Heroku and use migrations to create your prodction schema.
