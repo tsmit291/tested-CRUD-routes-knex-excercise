@@ -67,6 +67,10 @@ router.post('/:movie_id/reviews/:id', function (req, res, next){
 });
 
 router.post('/:movie_id/reviews/:id/delete', function (req, res, next){
-  res.redirect('/')
-})
+  res.redirect('/');
+});
+
+/*Test_Movie_Reviews_DB Routes Go Here */
+
+
 module.exports = router;
