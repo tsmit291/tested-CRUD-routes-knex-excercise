@@ -1,3 +1,11 @@
+## OVERVIEW
+
+Your mission is to work through each of the included test suites one at a time. If you successfully pass each test, you should have full CRUD routes and database functionality for `Movies` and their nested resource `Reviews`.
+
+__It is not necessary to build any client side functionality for this exercise (forms).__
+
+This is a back end only exercise. In your routes, simply `render` or `redirect` the proper template or route.
+
 ## Set Up
 
 ```sh
@@ -29,3 +37,9 @@ mocha
 * Be able to use knex migrations to create database schemas
 * Be able to deploy a CRUD app to Heroku
 * Be able to create database schemas on Heroku using migrations
+
+## SUBMIT A PULL REQUEST WITH YOUR HEROKU LINK
+
+After passing all tests, deploy the app to Heroku and use migrations to create your prodction schema.
+
+Add the url to your deployed site to this readme and submit a pull request.
