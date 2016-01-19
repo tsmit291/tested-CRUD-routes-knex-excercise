@@ -31,4 +31,15 @@ router.post('/:id/delete', function (req, res, next){
   res.redirect('/');
 });
 
+/* Test Movie DB Routes Go Here */
+
+router.get('/', function (req, res, next){
+  var allRows;
+  var tabley = knex.select().table('movies').then(function(rows){
+    allRows = rows;
+  });
+  res.render('movies/index', {rows: allRows})
+});
+
+
 module.exports = router;
