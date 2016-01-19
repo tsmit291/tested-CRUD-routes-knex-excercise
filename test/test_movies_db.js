@@ -2,6 +2,9 @@ var chai = require('chai');
 var assert = require('assert');
 var should = chai.should();
 var knex = require('../db/knex');
+var chaiHttp = require('chai-http');
+var server = require('../app');
+chai.use(chaiHttp);
 
 function Movies() {
   return knex('movies');
@@ -30,24 +33,30 @@ describe('Movies CRUD Routes', function() {
     })
   });
   xit('should find a movie', function () {
-    return Movies().where('id', 2).first().then(function (movie) {
+    return Movies().where('title', 'Adventures in CRUD').first().then(function (movie) {
       assert.equal(movie.title, 'Adventures in CRUD');
       assert.equal(movie.director, 'Martha Berner');
+      movie.should.have.property('id');
     })
   });
   xit('should update a movie', function () {
-    return Movies().where('id', 1).first().update({
-      director: 'Willy Wonka',
-      title: 'The Great Big Bubble Gum'
-    }).then(function (id) {
-      return Movies().where('id', id).first().then(function (movie) {
-        assert.equal(movie.director, 'Willy Wonka');
-        assert.equal(movie.title, 'The Great Big Bubble Gum');
+    return Movies().where('title', 'Spiral Like A Boss').update({
+          director: 'The Nmuta Jones',
+          title: 'Spiraling Like A Boss'
+        }).then(function (result) {
+          return Movies().where('title', 'Spiraling Like A Boss')
+          .then(function (movie) {
+          return Movies().select()
+          .then(function (movies) {
+            assert.equal(movie[0].title, 'Spiraling Like A Boss');
+            assert.equal(movie[0].director, 'The Nmuta Jones');
+            movies.should.have.length(3);
+        });
       })
-    })
+    });
   });
-  xit('should delete a movie', function () {
-    return Movies().where('id', 1).first().del().then(function (results) {
+  it('should delete a movie', function () {
+    return Movies().where('title', 'The Great Beyond').first().del().then(function (results) {
       return Movies().select().then(function (movies) {
         movies.should.have.length(2);
       })
