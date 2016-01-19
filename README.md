@@ -38,16 +38,18 @@ mocha
 * Be able to deploy a CRUD app to Heroku
 * Be able to create database schemas on Heroku using migrations
 
-## Schemas
+# Your App Should Use:
 
-__MOVIES__
+__1. Knex Migrations__
+
+__MOVIES SCHEMA__
 
 ```
 id
 director
 title
 ```
-__REVIEWS__
+__REVIEWS SCHEMA__
 
 ```
 id
@@ -55,6 +57,12 @@ movie_id
 author
 rating
 ```
+
+__2. Separate Route Files__
+
+* `index.js`
+* `movies.js`
+* `reviews.js`
 
 ## SUBMIT A PULL REQUEST WITH YOUR HEROKU LINK
 
