@@ -6,49 +6,49 @@ var server = require('../app');
 chai.use(chaiHttp);
 
 describe('Movies CRUD Routes', function() {
-  it('should GET all movies route', function (done) {
+  it('should GET /movies', function (done) {
     chai.request(server).get('/movies')
     .end(function (err, res) {
       res.should.have.status(200);
       done();
     });
   });
-  xit('should GET new movie route', function (done) {
+  xit('should GET /movies/new', function (done) {
     chai.request(server).get('/movies/new')
     .end(function (err, res) {
       res.should.have.status(200);
       done();
     });
   });
-  xit('should POST to movies route', function (done) {
+  xit('should POST to /movies', function (done) {
     chai.request(server).post('/movies')
     .end(function (err, res) {
       res.should.have.status(200);
       done();
     });
   });
-  xit('should GET one movie', function (done) {
+  xit('should GET /movies/:id', function (done) {
     chai.request(server).get('/movies/2')
     .end(function (err, res) {
       res.should.have.status(200);
       done();
     });
   });
-  xit('should get EDIT movie route', function (done) {
+  xit('should GET /movies/2/edit', function (done) {
     chai.request(server).get('/movies/2/edit')
     .end(function (err, res) {
       res.should.have.status(200);
       done();
     });
   });
-  xit('should POST to movies update route', function (done) {
+  xit('should POST /movies/:id', function (done) {
     chai.request(server).post('/movies/2')
     .end(function (err, res) {
       res.should.have.status(200);
       done();
     });
   });
-  xit('should POST to movies delete route', function (done) {
+  xit('should POST /movies/:id/delete', function (done) {
     chai.request(server).post('/movies/2/delete')
     .end(function (err, res) {
       res.should.have.status(200);
