@@ -8,7 +8,7 @@ exports.seed = function(knex, Promise) {
 
       knex('reviews').insert({movie_id: movies[0].id, author: 'David Bowie', rating: 5}),
       knex('reviews').insert({movie_id: movies[0].id, author: 'Aanal Patel', rating: 4}),
-      knex('reviews').insert({movie_id: movies[2].id, author: 'Clive Barker', rating: 5})
+      knex('reviews').insert({movie_id: movies[1].id, author: 'Smarmy Stu', rating: 9})
     );
   })
 };

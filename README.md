@@ -7,8 +7,14 @@ nodemon
 
 ## Run Tests
 
-Work through tests one at a time. As each test passes, remove the `x` from `xit`
-to run the next test. `add, commit, push` after each successfully passing test.
+Work through your tests in this order:
+
+1. `test_movies_routes`
+1. `test_movies_db`
+1. `test_movie_reviews_routes`
+1. `test_movie_reviews_db`
+
+Work through tests one at a time by removing the `x` from the next `xit` each time you pass a test. `add, commit, push` after each successfully passing test.
 
 ```sh
 mocha
@@ -16,7 +22,7 @@ mocha
 
 ## Objectives
 
-* Be able to write CRUD routes using TDD (Test Driven Development)
+* Be able to write nested CRUD routes using TDD (Test Driven Development)
 * Be able to write RESTful routes
 * Be able to write RESTful _nested_ routes
 * Be able to use knex with Postgres

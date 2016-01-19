@@ -6,7 +6,7 @@ var server = require('../app');
 chai.use(chaiHttp);
 
 describe('Reviews CRUD Routes', function() {
-  it('should GET all reviews route', function (done) {
+  xit('should GET all reviews for a movie route', function (done) {
     chai.request(server).get('/movies/1/reviews')
     .end(function (err, res) {
       res.should.have.status(200);
